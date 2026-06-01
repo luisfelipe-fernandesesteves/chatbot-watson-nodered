@@ -1,0 +1,4743 @@
+{
+  "name": "SoulUp-action",
+  "type": "action",
+  "valid": true,
+  "status": "Available",
+  "created": "2026-05-23T02:28:22.396Z",
+  "updated": "2026-05-28T01:10:35.258Z",
+  "language": "pt-br",
+  "skill_id": "4db385eb-0792-4533-ad77-bbc7d4d2fa6f",
+  "workspace": {
+    "actions": [
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_686",
+            "type": "standard",
+            "title": "VOLTAR",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Deseja voltar ao menu principal? 🔄\nSe precisar realizar outra consulta ou verificar mais informações, é só escolher uma das opções ao confirmar! Estou à disposição.👇"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                }
+              ]
+            },
+            "context": {
+              "variables": []
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_686",
+            "next_step": "step_454"
+          },
+          {
+            "step": "step_454",
+            "type": "standard",
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_454_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_454",
+            "condition": {
+              "or": [
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "sim",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "sim voltar",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "s",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "next_step": "step_570"
+          },
+          {
+            "step": "step_570",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Tudo bem! Até uma próxima. 👋"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Se precisar conversar novamente, é só mandar um 'Oi'! 😊"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_570",
+            "condition": {
+              "or": [
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "não",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "não voltar",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "não quero",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "nao",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "title": "AÇÃO VOLTAR OU SAIR",
+        "action": "action_20479",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_20479_intent_25142"
+        },
+        "variables": [
+          {
+            "title": "No response",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_454",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_454_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "Tudo bem! Até uma próxima. 👋",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_570",
+            "data_type": "any"
+          },
+          {
+            "title": "VOLTAR",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_686",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_29943",
+        "display_name": "SIM",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_260",
+            "type": "standard",
+            "title": "passo 1 ",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá! 👋 Sou a assistente virtual do Condomínio Europa. 🏢\n━━━━━━━━\nEstou aqui para facilitar o seu dia a dia! Posso te ajudar a verificar:\n💧 Contas de Água\n⚡ Luz\n🚫 Multas\n📦 Encomendas"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_260",
+            "next_step": "step_795"
+          },
+          {
+            "step": "step_795",
+            "type": "standard",
+            "title": "CPF",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Vamos começar? Envie o CPF do condômino responsável. No formato: 12345678900."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": []
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "Eu não entendi. Insira um número."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-number",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_795",
+            "next_step": "step_630"
+          },
+          {
+            "step": "step_630",
+            "type": "standard",
+            "title": "input de opção1",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Muito prazer,  Luis! 😊 O que você quer consultar hoje?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "CPF"
+                },
+                {
+                  "value": {
+                    "scalar": "luis"
+                  },
+                  "skill_variable": "NOME_DO_CONDOMINO"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_630_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_630",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "46948658890"
+                }
+              ]
+            },
+            "next_step": "step_644"
+          },
+          {
+            "step": "step_644",
+            "type": "standard",
+            "title": "input de opção1",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Muito prazer,  Ana! 😊 O que você quer consultar hoje?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "CPF"
+                },
+                {
+                  "value": {
+                    "scalar": "ana"
+                  },
+                  "skill_variable": "NOME_DO_CONDOMINO"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_644_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_644",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "50449706893"
+                }
+              ]
+            },
+            "next_step": "step_248"
+          },
+          {
+            "step": "step_248",
+            "type": "standard",
+            "title": "input de opção1",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Muito prazer,  Enzo! 😊 O que você quer consultar hoje?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "CPF"
+                },
+                {
+                  "value": {
+                    "scalar": "enzo\n"
+                  },
+                  "skill_variable": "NOME_DO_CONDOMINO"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_248_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_248",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "40522395805"
+                }
+              ]
+            },
+            "next_step": "step_928"
+          },
+          {
+            "step": "step_928",
+            "type": "standard",
+            "title": "input de opção1",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Muito prazer,  Larissa! 😊 O que você quer consultar hoje?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "CPF"
+                },
+                {
+                  "value": {
+                    "scalar": "larissa"
+                  },
+                  "skill_variable": "NOME_DO_CONDOMINO"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_928_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_928",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "54653805865"
+                }
+              ]
+            },
+            "next_step": "step_426"
+          },
+          {
+            "step": "step_426",
+            "type": "standard",
+            "title": "input de opção1",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Muito prazer,  Pedro! 😊 O que você quer consultar hoje?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "CPF"
+                },
+                {
+                  "value": {
+                    "scalar": "pedro\n"
+                  },
+                  "skill_variable": "NOME_DO_CONDOMINO"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_426_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_426",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "40246232811"
+                }
+              ]
+            },
+            "next_step": "step_234"
+          },
+          {
+            "step": "step_234",
+            "type": "standard",
+            "title": "CPF",
+            "output": {
+              "generic": []
+            },
+            "context": {
+              "variables": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_33169",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_234_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_234",
+            "condition": {
+              "and": [
+                {
+                  "neq": [
+                    {
+                      "variable": "step_795"
+                    },
+                    {
+                      "scalar": "46948658890"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "variable": "step_795"
+                    },
+                    {
+                      "scalar": "50449706893"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "variable": "step_795"
+                    },
+                    {
+                      "scalar": "40522395805"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "variable": "step_795"
+                    },
+                    {
+                      "scalar": "54653805865"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "variable": "step_795"
+                    },
+                    {
+                      "scalar": "40246232811"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "title": "saudações",
+        "action": "action_26380",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_26380_intent_32866"
+        },
+        "variables": [
+          {
+            "title": "CPF",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_234",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_234_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "input de opção1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_248",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_248_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "passo 1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_260",
+            "data_type": "any"
+          },
+          {
+            "title": "input de opção1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_426",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_426_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "input de opção1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_630",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_630_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "input de opção1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_644",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_644_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "CPF",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_795",
+            "data_type": "number"
+          },
+          {
+            "title": "input de opção1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_928",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_928_result_1",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_20479",
+        "display_name": "MENSAGEM DE INICIO",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_795",
+            "type": "standard",
+            "title": "CPF",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "❌ **CPF incorreto ou não identificado!**\n\nPor favor, digite o CPF do condômino responsável novamente, utilizando o formato: 12345678900"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                }
+              ]
+            },
+            "context": {
+              "variables": []
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "Eu não entendi. Insira um número."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-number",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_795",
+            "next_step": "step_630"
+          },
+          {
+            "step": "step_630",
+            "type": "standard",
+            "title": "input de opção1",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Muito prazer, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! 😊 O que você quer consultar hoje?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "CPF"
+                },
+                {
+                  "value": {
+                    "scalar": "Luis"
+                  },
+                  "skill_variable": "NOME_DO_CONDOMINO"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_630_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_630",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "46948658890"
+                }
+              ]
+            },
+            "next_step": "step_644"
+          },
+          {
+            "step": "step_644",
+            "type": "standard",
+            "title": "input de opção1",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Muito prazer, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! 😊 O que você quer consultar hoje?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "CPF"
+                },
+                {
+                  "value": {
+                    "scalar": "Ana Clara"
+                  },
+                  "skill_variable": "NOME_DO_CONDOMINO"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_644_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_644",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "50449706893"
+                }
+              ]
+            },
+            "next_step": "step_248"
+          },
+          {
+            "step": "step_248",
+            "type": "standard",
+            "title": "input de opção1",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Muito prazer, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! 😊 O que você quer consultar hoje?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "CPF"
+                },
+                {
+                  "value": {
+                    "scalar": "Enzo Stanguera\n"
+                  },
+                  "skill_variable": "NOME_DO_CONDOMINO"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_248_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_248",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "40522395805"
+                }
+              ]
+            },
+            "next_step": "step_928"
+          },
+          {
+            "step": "step_928",
+            "type": "standard",
+            "title": "input de opção1",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Muito prazer, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! 😊 O que você quer consultar hoje?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "CPF"
+                },
+                {
+                  "value": {
+                    "scalar": "Larissa"
+                  },
+                  "skill_variable": "NOME_DO_CONDOMINO"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_928_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_928",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "54653805865"
+                }
+              ]
+            },
+            "next_step": "step_426"
+          },
+          {
+            "step": "step_426",
+            "type": "standard",
+            "title": "input de opção1",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Muito prazer, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! 😊 O que você quer consultar hoje?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "CPF"
+                },
+                {
+                  "value": {
+                    "scalar": "Pedro limeis\n"
+                  },
+                  "skill_variable": "NOME_DO_CONDOMINO"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_426_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_426",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "40246232811"
+                }
+              ]
+            },
+            "next_step": "step_234"
+          },
+          {
+            "step": "step_234",
+            "type": "standard",
+            "title": "CPF",
+            "output": {
+              "generic": []
+            },
+            "context": {
+              "variables": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_33169",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_234_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_234",
+            "condition": {
+              "and": [
+                {
+                  "neq": [
+                    {
+                      "variable": "step_795"
+                    },
+                    {
+                      "scalar": "46948658890"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "variable": "step_795"
+                    },
+                    {
+                      "scalar": "50449706893"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "variable": "step_795"
+                    },
+                    {
+                      "scalar": "40522395805"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "variable": "step_795"
+                    },
+                    {
+                      "scalar": "54653805865"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "variable": "step_795"
+                    },
+                    {
+                      "scalar": "40246232811"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "title": "perguntando cpf",
+        "action": "action_26380-2",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_26380_intent_32866-2"
+        },
+        "variables": [
+          {
+            "title": "CPF",
+            "variable": "step_234",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_234_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "input de opção1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_248",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_248_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "input de opção1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_426",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_426_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "input de opção1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_630",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_630_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "input de opção1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_644",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_644_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "CPF",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_795",
+            "data_type": "number"
+          },
+          {
+            "title": "input de opção1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_928",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_928_result_1",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "fallback",
+        "display_name": "perguntando cpf",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_257",
+            "type": "standard",
+            "output": {
+              "generic": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_257",
+            "next_step": "step_240"
+          },
+          {
+            "step": "step_240",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🔔 Comunicados do Condomínio\nAqui estão as últimas novidades para você:\n━━━━━━━━\n🏢 Manutenção dos Elevadores\nO síndico Alfonso informa que faremos a manutenção preventiva nesta semana. Por favor, fiquem atentos aos horários na portaria! 🛠️\n━━━━━━━━\n🧹 Limpeza das Áreas Comuns\nNeste final de semana, realizaremos uma limpeza completa no hall, garagem e salão de festas."
+                          },
+                          {
+                            "scalar": " Contamos com a colaboração de todos para manter os espaços organizados! ✨\n━━━━━━━━\nAgradecemos a compreensão.\nAdministração do Condomínio"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_240",
+            "condition": {
+              "or": [
+                {
+                  "eq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "40522395805"
+                    }
+                  ]
+                },
+                {
+                  "eq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "46948658890"
+                    }
+                  ]
+                },
+                {
+                  "eq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "50449706893"
+                    }
+                  ]
+                },
+                {
+                  "eq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "54653805865"
+                    }
+                  ]
+                },
+                {
+                  "eq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "40246232811"
+                    }
+                  ]
+                }
+              ]
+            },
+            "next_step": "step_557"
+          },
+          {
+            "step": "step_557",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📦 Notificação Exclusiva para o Morador "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "\n\n━━━━━━━━\n\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": " ! Informamos que uma encomenda foi recebida na portaria do condomínio hoje às 14h35.\n\nPedimos que realize a retirada apresentando sua identificação. Em caso de dúvidas, entre em contato com a administração.\n\nAtenciosamente,\nAdministração do Condomínio"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_557",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "46948658890"
+                }
+              ]
+            },
+            "next_step": "step_722"
+          },
+          {
+            "step": "step_722",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🚗 Aviso para "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "\n\n━━━━━━━━\n\nOlá "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": ", Identificamos que o vidro do veículo BMW M3 (vaga G14) permaneceu aberto após as 22h.\n\nPedimos, por gentileza, que verifique o automóvel assim que possível.\n\nAtenciosamente, Administração do Condomínio."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_722",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "40522395805"
+                }
+              ]
+            },
+            "next_step": "step_336"
+          },
+          {
+            "step": "step_336",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📦 Notificação para "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "\n\n━━━━━━━━\n\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": ", Uma encomenda em seu nome foi recebida na portaria do condomínio nesta tarde.\n\nA retirada pode ser feita mediante apresentação de documento com foto."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_336",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "50449706893"
+                }
+              ]
+            },
+            "next_step": "step_447"
+          },
+          {
+            "step": "step_447",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🔔 Comunicado para "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "\n\n━━━━━━━━\n\nOlá "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": ", Informamos que foi registrada uma reserva da Área Gourmet vinculada à sua unidade para este sábado, às 18h.\n\nCaso tenha qualquer dúvida ou necessite realizar alguma alteração, por gentileza, entre em contato com a administração.\n\nAtenciosamente, Administração do Condomínio"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_447",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "54653805865"
+                }
+              ]
+            },
+            "next_step": "step_608"
+          },
+          {
+            "step": "step_608",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "⚠️ Aviso para "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "\n\n━━━━━━━━\n\nOlá "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": ", Durante a vistoria noturna realizada no condomínio, identificamos um volume de som acima do permitido em sua unidade, excedendo o horário de silêncio estabelecido em nosso Regimento Interno.\n\nSolicitamos a gentileza de adequar o volume para garantir o bem-estar e o descanso de todos os condôminos. Contamos com a sua colaboração.\n\nAtenciosamente, Administração do Condomínio."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_608",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "40246232811"
+                }
+              ]
+            },
+            "next_step": "step_434"
+          },
+          {
+            "step": "step_434",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🚨 Notificação para "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "\n\n━━━━━━━━\n\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Durante a ronda realizada na garagem do condomínio, identificamos que os veículos Porsche 911 GT3 RS e Ferrari 812 GTS permanecem com os faróis ligados.\n\nPedimos, por gentileza, que verifiquem os veículos o quanto antes para evitar o descarregamento das baterias.\n\nAtenciosamente, Administração do Condomínio"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_434",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "46948658890"
+                }
+              ]
+            },
+            "next_step": "step_944"
+          },
+          {
+            "step": "step_944",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Todas as notificações foram lidas, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_944_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_944"
+          }
+        ],
+        "title": "NOTIFICAÇÕES",
+        "action": "action_29943",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_29943_intent_40455"
+        },
+        "variables": [
+          {
+            "title": "🔔 Comunicados do Condomínio Aqui estão as últimas novidades par",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_240",
+            "data_type": "any"
+          },
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_257",
+            "data_type": "any"
+          },
+          {
+            "title": "📦 Notificação para {variable} ━━━━━━━━ Olá, {variable}, Uma enc",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_336",
+            "data_type": "any"
+          },
+          {
+            "title": "🚨 Notificação para {variable} ━━━━━━━━ Olá, {variable}! Durante",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_434",
+            "data_type": "any"
+          },
+          {
+            "title": "🔔 Comunicado para {variable} ━━━━━━━━ Olá {variable}, Informamo",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_447",
+            "data_type": "any"
+          },
+          {
+            "title": "📦 Notificação Exclusiva para o Morador {variable} ━━━━━━━━ Olá,",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_557",
+            "data_type": "any"
+          },
+          {
+            "title": "⚠️ Aviso para {variable} ━━━━━━━━ Olá {variable}, Durante a vist",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_608",
+            "data_type": "any"
+          },
+          {
+            "title": "🚗 Aviso para {variable} ━━━━━━━━ Olá {variable}, Identificamos ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_722",
+            "data_type": "any"
+          },
+          {
+            "title": "Todas as notificações foram lidas, {variable}!",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_944",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_944_result_1",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_46723",
+        "display_name": "NOTIFICAÇÕES",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_240",
+            "type": "standard",
+            "output": {
+              "generic": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_240",
+            "next_step": "step_733"
+          },
+          {
+            "step": "step_733",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "⚡ Verificação de Conta de Luz\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Informamos que a atualização da sua conta de energia foi realizada em 12/05/2026.\n━━━━━━━━\n💰 Valor: R$ 264,50\n📅 Vencimento: 22/05/2026\n━━━━━━━━\n⚠️ Em caso de dúvidas, entre em contato com a administração. Precisa de mais alguma informação? 😊"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_733",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "46948658890"
+                }
+              ]
+            },
+            "next_step": "step_518"
+          },
+          {
+            "step": "step_518",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "⚡ Verificação de Conta de Luz\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Informamos que a atualização da sua conta de energia foi realizada em 12/05/2026.\n━━━━━━━━\n💰 Valor: R$ 264,50\n📅 Vencimento: 22/05/2026\n━━━━━━━━\n⚠️ Em caso de dúvidas, entre em contato com a administração. Precisa de mais alguma informação? 😊"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_518",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "50449706893"
+                }
+              ]
+            },
+            "next_step": "step_255"
+          },
+          {
+            "step": "step_255",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "⚡ Verificação de Conta de Luz\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Informamos que a atualização da sua conta de energia foi realizada em 18/05/2026.\n━━━━━━━━\n💰 Valor: R$ 315,80\n📅 Vencimento: 28/05/2026\n━━━━━━━━\n⚠️ Em caso de dúvidas, entre em contato com a administração. Precisa de mais alguma informação? 😊"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_255",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "40522395805"
+                }
+              ]
+            },
+            "next_step": "step_312"
+          },
+          {
+            "step": "step_312",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "⚡ Verificação de Conta de Luz\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Informamos que a atualização da sua conta de energia foi realizada em 09/05/2026.\n━━━━━━━━\n💰 Valor: R$ 198,25\n📅 Vencimento: 19/05/2026\n━━━━━━━━\n⚠️ Em caso de dúvidas, entre em contato com a administração. Precisa de mais alguma informação? 😊"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_312",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "54653805865"
+                }
+              ]
+            },
+            "next_step": "step_388"
+          },
+          {
+            "step": "step_388",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "⚡ Verificação de Conta de Luz\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Informamos que a atualização da sua conta de energia foi realizada em 21/05/2026.\n━━━━━━━━\n💰 Valor: R$ 342,90\n📅 Vencimento: 31/05/2026\n━━━━━━━━\n⚠️ Em caso de dúvidas, entre em contato com a administração. Precisa de mais alguma informação? 😊"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_388",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "40246232811"
+                }
+              ]
+            },
+            "next_step": "step_232"
+          },
+          {
+            "step": "step_232",
+            "type": "standard",
+            "output": {
+              "generic": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_232_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_232"
+          }
+        ],
+        "title": "CONTA DE LUZ",
+        "action": "action_29943-2",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_29943_intent_40455-2"
+        },
+        "variables": [
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_232",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_232_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_240",
+            "data_type": "any"
+          },
+          {
+            "title": "⚡ Verificação de Conta de Luz ━━━━━━━━ Olá, {variable}! Informam",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_255",
+            "data_type": "any"
+          },
+          {
+            "title": "⚡ Verificação de Conta de Luz ━━━━━━━━ Olá, {variable}! Informam",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_312",
+            "data_type": "any"
+          },
+          {
+            "title": "⚡ Verificação de Conta de Luz ━━━━━━━━ Olá, {variable}! Informam",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_388",
+            "data_type": "any"
+          },
+          {
+            "title": "⚡ Verificação de Conta de Luz ━━━━━━━━ Olá, {variable}! Informam",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_518",
+            "data_type": "any"
+          },
+          {
+            "title": "⚡ Verificação de Conta de Luz ━━━━━━━━ Olá, {variable}! Informam",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_733",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_29943-3",
+        "display_name": "CONTA DE LUZ",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_842",
+            "type": "standard",
+            "output": {
+              "generic": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_842",
+            "next_step": "step_240"
+          },
+          {
+            "step": "step_240",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "💧 Verificação de Conta de Água\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Aqui estão os detalhes do seu consumo atualizado em 14/05/2026.:\n━━━━━━━━\n💰 Valor: R$ 132,45\n📅 Vencimento: 22/05/2026"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_240",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "46948658890"
+                }
+              ]
+            },
+            "next_step": "step_558"
+          },
+          {
+            "step": "step_558",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "💧 Verificação de Conta de Água\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Aqui estão os detalhes do seu consumo atualizado em 09/05/2026:\n━━━━━━━━\n💰 Valor: R$ 187,20\n📅 Vencimento: 19/05/2026"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_558",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "50449706893"
+                }
+              ]
+            },
+            "next_step": "step_476"
+          },
+          {
+            "step": "step_476",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "💧 Verificação de Conta de Água\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Aqui estão os detalhes do seu consumo atualizado em 17/05/2026:\n━━━━━━━━\n💰 Valor: R$ 104,80\n📅 Vencimento: 27/05/2026"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_476",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "40522395805"
+                }
+              ]
+            },
+            "next_step": "step_319"
+          },
+          {
+            "step": "step_319",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "💧 Verificação de Conta de Água\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Aqui estão os detalhes do seu consumo atualizado em 11/05/2026:\n━━━━━━━━\n💰 Valor: R$ 159,30\n📅 Vencimento: 21/05/2026"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_319",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "54653805865"
+                }
+              ]
+            },
+            "next_step": "step_706"
+          },
+          {
+            "step": "step_706",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "💧 Verificação de Conta de Água\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Aqui estão os detalhes do seu consumo atualizado em 19/05/2026:\n━━━━━━━━\n💰 Valor: R$ 241,65\n📅 Vencimento: 29/05/2026"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_706",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "40246232811"
+                }
+              ]
+            },
+            "next_step": "step_859"
+          },
+          {
+            "step": "step_859",
+            "type": "standard",
+            "output": {
+              "generic": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_859_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_859"
+          }
+        ],
+        "title": "CONTA DE ÁGUA",
+        "action": "action_29943-3",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_29943_intent_40455-3"
+        },
+        "variables": [
+          {
+            "title": "💧 Verificação de Conta de Água ━━━━━━━━ Olá, {variable}! Aqui e",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_240",
+            "data_type": "any"
+          },
+          {
+            "title": "💧 Verificação de Conta de Água ━━━━━━━━ Olá, {variable}! Aqui e",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_319",
+            "data_type": "any"
+          },
+          {
+            "title": "💧 Verificação de Conta de Água ━━━━━━━━ Olá, {variable}! Aqui e",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_476",
+            "data_type": "any"
+          },
+          {
+            "title": "💧 Verificação de Conta de Água ━━━━━━━━ Olá, {variable}! Aqui e",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_558",
+            "data_type": "any"
+          },
+          {
+            "title": "💧 Verificação de Conta de Água ━━━━━━━━ Olá, {variable}! Aqui e",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_706",
+            "data_type": "any"
+          },
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_842",
+            "data_type": "any"
+          },
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_859",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_859_result_1",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_29943-4",
+        "display_name": "CONTA DE ÁGUA",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_187",
+            "type": "standard",
+            "output": {
+              "generic": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_187",
+            "next_step": "step_240"
+          },
+          {
+            "step": "step_240",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📦 Status da Encomenda\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Temos uma novidade: uma encomenda chegou à portaria! 📬\n━━━━━━━━\n📍 Código: SP84720195\n🚚 Transportadora: Shopee Express\n📅 Data/Hora: 26/05/2026 às 10h18\n━━━━━━━━\nPode realizar a retirada na portaria apresentando um documento com foto! 📸"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_240",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "50449706893"
+                }
+              ]
+            },
+            "next_step": "step_396"
+          },
+          {
+            "step": "step_396",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📦 Status da Encomenda\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Temos uma novidade: uma encomenda chegou à portaria! 📬\n━━━━━━━━\n📍 Código: SP84720195\n🚚 Transportadora: Mercado Livre\n📅 Data/Hora: 27/05/2026 às 14h42\n━━━━━━━━\nPode realizar a retirada na portaria apresentando um documento com foto! 📸"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_396",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "46948658890"
+                }
+              ]
+            },
+            "next_step": "step_420"
+          },
+          {
+            "step": "step_420",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📦 Status da Encomenda\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Temos uma novidade: uma encomenda chegou à portaria! 📬\n━━━━━━━━\n📍 Código: FL38174206\n🚚 Transportadora: Jadlog\n📅 Data/Hora: 27/05/2026 às 18h11\n━━━━━━━━\nPode realizar a retirada na portaria apresentando um documento com foto! 📸"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_420",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "40522395805"
+                }
+              ]
+            },
+            "next_step": "step_507"
+          },
+          {
+            "step": "step_507",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📦 Status da Encomenda\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Temos uma novidade: uma encomenda chegou à portaria! 📬\n━━━━━━━━\n📍 Código: AM99274163\n🚚 Transportadora: Amazon Logistics\n📅 Data/Hora: 25/05/2026 às 13h29\n━━━━━━━━\nPode realizar a retirada na portaria apresentando um documento com foto! 📸"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_507",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "54653805865"
+                }
+              ]
+            },
+            "next_step": "step_800"
+          },
+          {
+            "step": "step_800",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📦 Status da Encomenda\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Temos uma novidade: uma encomenda chegou à portaria! 📬\n━━━━━━━━\n📍 Código: NL55280147\n🚚 Transportadora: Correios\n📅 Data/Hora: 27/05/2026 às 16h07\n━━━━━━━━\nPode realizar a retirada na portaria apresentando um documento com foto! 📸"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_800",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "40246232811"
+                }
+              ]
+            },
+            "next_step": "step_918"
+          },
+          {
+            "step": "step_918",
+            "type": "standard",
+            "output": {
+              "generic": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_918_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_918"
+          }
+        ],
+        "title": "ENCOMENDAS",
+        "action": "action_29943-4",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_29943_intent_40455-4"
+        },
+        "variables": [
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_187",
+            "data_type": "any"
+          },
+          {
+            "title": "📦 Status da Encomenda ━━━━━━━━ Olá, {variable}! Temos uma novid",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_240",
+            "data_type": "any"
+          },
+          {
+            "title": "📦 Status da Encomenda ━━━━━━━━ Olá, {variable}! Temos uma novid",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_396",
+            "data_type": "any"
+          },
+          {
+            "title": "📦 Status da Encomenda ━━━━━━━━ Olá, {variable}! Temos uma novid",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_420",
+            "data_type": "any"
+          },
+          {
+            "title": "📦 Status da Encomenda ━━━━━━━━ Olá, {variable}! Temos uma novid",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_507",
+            "data_type": "any"
+          },
+          {
+            "title": "📦 Status da Encomenda ━━━━━━━━ Olá, {variable}! Temos uma novid",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_800",
+            "data_type": "any"
+          },
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_918",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_918_result_1",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_29943-5",
+        "display_name": "ENCOMENDAS",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_827",
+            "type": "standard",
+            "output": {
+              "generic": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_827",
+            "next_step": "step_240"
+          },
+          {
+            "step": "step_240",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🚫 Notificação de Multa\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Infelizmente, recebemos um registro de ocorrência em 24/05/2026 às 00h18.\n━━━━━━━━\n📝 Motivo: Utilização indevida da área comum sem agendamento prévio.\n💰 Valor: R$ 95,00\n━━━━━━━━\nContamos com sua colaboração para mantermos nosso condomínio organizado! 🤝"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_240",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "40522395805"
+                }
+              ]
+            },
+            "next_step": "step_473"
+          },
+          {
+            "step": "step_473",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🚫 Notificação de Multa\n━━━━━━━━\nOlá,  "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Infelizmente, recebemos um registro de ocorrência em 22/05/2026 às 08h27.\n━━━━━━━━\n📝 Motivo: Descarte inadequado de lixo no corredor.\n💰 Valor: R$ 75,00\n━━━━━━━━\nContamos com sua colaboração para mantermos nosso condomínio sempre limpo e organizado! 🤝"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_473",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "50449706893"
+                }
+              ]
+            },
+            "next_step": "step_696"
+          },
+          {
+            "step": "step_696",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🚫 Notificação de Multa\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": "! Infelizmente, recebemos um registro de ocorrência em 22/05/2026 às 08h27.\n━━━━━━━━\n📝 Motivo: Veículo estacionado em local não autorizado.\n💰 Valor: R$ 120,00\n━━━━━━━━\nPedimos atenção às normas internas para evitar novas ocorrências! 🤝"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_696",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "46948658890"
+                }
+              ]
+            },
+            "next_step": "step_378"
+          },
+          {
+            "step": "step_378",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🚫 Notificação de Multa\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": " Infelizmente, recebemos um registro de ocorrência em 22/05/2026 às 08h27.\n━━━━━━━━\n📝 Motivo: Excesso de ruído após o horário permitido.\n💰 Valor: R$ 180,00\n━━━━━━━━\nContamos com sua colaboração para respeitarmos a lei do silêncio! 🤝"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_378",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "40246232811"
+                }
+              ]
+            },
+            "next_step": "step_839"
+          },
+          {
+            "step": "step_839",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🚫 Notificação de Multa\n━━━━━━━━\nOlá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": " Infelizmente, recebemos um registro de ocorrência em 22/05/2026 às 08h27.\n━━━━━━━━\n📝 Motivo: Permanência de visitantes após o horário permitido na área da piscina.\n💰 Valor: R$ 140,00\n━━━━━━━━\nContamos com sua colaboração para respeito dos horários de visita em locais públicos do condomínio! 🤝"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_839",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "CPF"
+                },
+                {
+                  "scalar": "54653805865"
+                }
+              ]
+            },
+            "next_step": "step_818"
+          },
+          {
+            "step": "step_818",
+            "type": "standard",
+            "output": {
+              "generic": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_818_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_818"
+          }
+        ],
+        "title": "MULTAS",
+        "action": "action_29943-5",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_29943_intent_40455-5"
+        },
+        "variables": [
+          {
+            "title": "🚫 Notificação de Multa ━━━━━━━━ Olá, {variable}! Infelizmente, ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_240",
+            "data_type": "any"
+          },
+          {
+            "title": "🚫 Notificação de Multa ━━━━━━━━ Olá, {variable} Infelizmente, r",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_378",
+            "data_type": "any"
+          },
+          {
+            "title": "🚫 Notificação de Multa ━━━━━━━━ Olá, {variable}! Infelizmente, ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_473",
+            "data_type": "any"
+          },
+          {
+            "title": "🚫 Notificação de Multa ━━━━━━━━ Olá, {variable}! Infelizmente, ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_696",
+            "data_type": "any"
+          },
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_818",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_818_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_827",
+            "data_type": "any"
+          },
+          {
+            "title": "🚫 Notificação de Multa ━━━━━━━━ Olá, {variable} Infelizmente, r",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_839",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_26380-2",
+        "display_name": "MULTAS",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_769",
+            "type": "standard",
+            "output": {
+              "generic": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_26380-2",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_769_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_769",
+            "condition": {
+              "or": [
+                {
+                  "neq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "46948658890"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "54653805865"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "40246232811"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "40522395805"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "40522395805"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "title": "perguntar novamente",
+        "action": "action_33169",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_33169_intent_48264"
+        },
+        "variables": [
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_769",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_769_result_1",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_34727",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_162",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Até a próxima! 👋\n\nSe precisar conversar novamente, é só mandar um 'Oi'! 😊"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_162"
+          }
+        ],
+        "title": "ENCERRAR",
+        "action": "action_34727",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_34727_intent_42728"
+        },
+        "variables": [
+          {
+            "title": "Até a próxima! 👋 Se precisar conversar novamente, é só mandar u",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_162",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_26380",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_752",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá, "
+                          },
+                          {
+                            "skill_variable": "NOME_DO_CONDOMINO"
+                          },
+                          {
+                            "scalar": " 😊 O que vamos fazer hoje? 🗓️\n━━━━━━━━━━━━━━━━━\n💧 Conta de Água\n⚡ Conta de Luz\n📦 Encomendas\n🚫 Multas\n🔔 Notificações\n━━━━━━━━━━━━━━━━━\n❌ Sair / Encerrar"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_752"
+          }
+        ],
+        "title": "Menu Principal",
+        "action": "action_46723",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_46723_intent_6737"
+        },
+        "variables": [
+          {
+            "title": "Olá, {variable} 😊 O que vamos fazer hoje? 🗓️ ━━━━━━━━━━━━━━━━━",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_752",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_29943-2",
+        "display_name": "MENU PRINCIPAL",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_001",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Acho que não entendi. Reformule sua pergunta."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001",
+            "condition": {
+              "lte": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": ""
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "fallback",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_002_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "gt": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            }
+          }
+        ],
+        "title": "No matches",
+        "action": "anything_else",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "Receio não entender o que você está perguntando, por favor, refo",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002_result_1",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_243",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "errado, digite o cpf corretamente"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_26380",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_243_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_243",
+            "condition": {
+              "or": [
+                {
+                  "neq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "54653805865"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "40246232811"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "46948658890"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "40522395805"
+                    }
+                  ]
+                },
+                {
+                  "neq": [
+                    {
+                      "skill_variable": "CPF"
+                    },
+                    {
+                      "scalar": "50449706893"
+                    }
+                  ]
+                }
+              ]
+            },
+            "next_step": "step_001"
+          },
+          {
+            "step": "step_001",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Acho que não entendi. Eu posso conectar você a um agente."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_001",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Step validation failed"
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Desculpe não poder ajudá-lo. Vou conectá-lo a um agente imediatamente."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_002",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Agent requested"
+                }
+              ]
+            },
+            "next_step": "step_003"
+          },
+          {
+            "step": "step_003",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Acho que não entendi o que você está pedindo; vou conectá-lo a um agente."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_003",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "No action matches"
+                }
+              ]
+            },
+            "next_step": "step_004"
+          },
+          {
+            "step": "step_004",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Parece que esta conversa seria melhor gerenciada por um agente humano. Deixe-me conectá-lo a um de nossos agentes."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_004",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Danger word detected"
+                }
+              ]
+            },
+            "next_step": "step_005"
+          },
+          {
+            "step": "step_005",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Parece que esta conversa seria melhor gerenciada por um agente humano. Deixe-me conectá-lo a um de nossos agentes."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_005",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Profanity detected"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Fallback",
+        "action": "fallback",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "fallback_connect_to_agent"
+        },
+        "variables": [
+          {
+            "title": "Acho que não entendi. Eu posso conectar você a um agente.",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "title": "Desculpe não poder ajudá-lo. Vou conectá-lo a um agente imediata",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "title": "Acho que não entendi o que você está pedindo; vou conectá-lo a u",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_003",
+            "data_type": "any"
+          },
+          {
+            "title": "Parece que esta conversa seria melhor gerenciada por um agente h",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_004",
+            "data_type": "any"
+          },
+          {
+            "title": "Parece que esta conversa seria melhor gerenciada por um agente h",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_005",
+            "data_type": "any"
+          },
+          {
+            "title": "errado, digite o cpf corretamente",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_243",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_243_result_1",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "run_always",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "danger_word_detected",
+            "type": "standard",
+            "title": "Connect to agent",
+            "handlers": [],
+            "resolver": {
+              "type": "fallback"
+            },
+            "variable": "danger_word_detected_variable",
+            "condition": {
+              "entity": "danger_words"
+            },
+            "next_step": "profanity_detected"
+          },
+          {
+            "step": "profanity_detected",
+            "type": "standard",
+            "title": "Show warning",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Use o idioma apropriado ao interagir com o assistente."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "max_hits",
+                "handler": "max_hits_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "max_hits": 2,
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "profanity_detected_variable",
+            "condition": {
+              "entity": "profane_words"
+            }
+          }
+        ],
+        "title": "Trigger word detected",
+        "action": "run_always",
+        "boosts": [],
+        "handlers": [],
+        "variables": [
+          {
+            "title": "Profanity detected",
+            "variable": "danger_word_detected_variable",
+            "data_type": "any"
+          },
+          {
+            "title": "Profane word detected",
+            "variable": "profanity_detected_variable",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else"
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_759",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "digite OI para podemos continuar"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_759"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "title": "digite OI para podemos continuar",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_759",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_33169",
+        "disambiguation_opt_out": true
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_20479_intent_25142",
+        "examples": [
+          {
+            "text": "ONDE VEJO"
+          },
+          {
+            "text": "PRECISO VER"
+          },
+          {
+            "text": "PRECISO VER FALTAS"
+          },
+          {
+            "text": "PRECISO VER NOTAS"
+          },
+          {
+            "text": "QUERO"
+          },
+          {
+            "text": "S"
+          },
+          {
+            "text": "SIM"
+          }
+        ]
+      },
+      {
+        "intent": "action_26380_intent_32866",
+        "examples": [
+          {
+            "text": "ajude"
+          },
+          {
+            "text": "alguem ai"
+          },
+          {
+            "text": "beleza"
+          },
+          {
+            "text": "boa noite"
+          },
+          {
+            "text": "boa tarde"
+          },
+          {
+            "text": "Bom dia"
+          },
+          {
+            "text": "e ai"
+          },
+          {
+            "text": "e aí"
+          },
+          {
+            "text": "ei"
+          },
+          {
+            "text": "hello"
+          },
+          {
+            "text": "help"
+          },
+          {
+            "text": "help me"
+          },
+          {
+            "text": "hi"
+          },
+          {
+            "text": "hii"
+          },
+          {
+            "text": "hiii"
+          },
+          {
+            "text": "hy"
+          },
+          {
+            "text": "hyyy"
+          },
+          {
+            "text": "me ajuda"
+          },
+          {
+            "text": "oi"
+          },
+          {
+            "text": "oii"
+          },
+          {
+            "text": "oiii"
+          },
+          {
+            "text": "oiiii"
+          },
+          {
+            "text": "oiiiiiiiiiiiiiiii"
+          },
+          {
+            "text": "oioi"
+          },
+          {
+            "text": "oioio"
+          },
+          {
+            "text": "ola"
+          },
+          {
+            "text": "Olá"
+          },
+          {
+            "text": "oooooooooooooiiiiiiiiiiiiii"
+          },
+          {
+            "text": "opa"
+          },
+          {
+            "text": "pode me auxiliar"
+          },
+          {
+            "text": "saudações"
+          },
+          {
+            "text": "save"
+          },
+          {
+            "text": "/start"
+          },
+          {
+            "text": "welcome_message"
+          }
+        ]
+      },
+      {
+        "intent": "action_26380_intent_32866-2",
+        "examples": []
+      },
+      {
+        "intent": "action_29943_intent_40455",
+        "examples": [
+          {
+            "text": "mensagens"
+          },
+          {
+            "text": "não lidos"
+          },
+          {
+            "text": "notificações"
+          }
+        ]
+      },
+      {
+        "intent": "action_29943_intent_40455-2",
+        "examples": [
+          {
+            "text": "conta"
+          },
+          {
+            "text": "CONTA DE LUZ"
+          },
+          {
+            "text": "CONTA LUZ"
+          },
+          {
+            "text": "LUZ"
+          },
+          {
+            "text": "VERIFICAR LUZ"
+          }
+        ]
+      },
+      {
+        "intent": "action_29943_intent_40455-3",
+        "examples": [
+          {
+            "text": "AGUA"
+          },
+          {
+            "text": "CONTA"
+          },
+          {
+            "text": "CONTA AGUA"
+          },
+          {
+            "text": "CONTA DE AGUA"
+          },
+          {
+            "text": "VERIFICAR AGUA"
+          }
+        ]
+      },
+      {
+        "intent": "action_29943_intent_40455-4",
+        "examples": [
+          {
+            "text": "encomenda"
+          },
+          {
+            "text": "ENCOMENDAS"
+          },
+          {
+            "text": "ENCOMENDAS PARA MIM"
+          },
+          {
+            "text": "entrega"
+          },
+          {
+            "text": "MINHAS ENCOMENDAS"
+          },
+          {
+            "text": "pacote"
+          }
+        ]
+      },
+      {
+        "intent": "action_29943_intent_40455-5",
+        "examples": [
+          {
+            "text": "minha multa"
+          },
+          {
+            "text": "MINHAS MULTAS"
+          },
+          {
+            "text": "MULTA"
+          },
+          {
+            "text": "multas para mim"
+          },
+          {
+            "text": "Notificação de Multa"
+          }
+        ]
+      },
+      {
+        "intent": "action_33169_intent_48264",
+        "examples": [
+          {
+            "text": "perguntar novamente"
+          }
+        ]
+      },
+      {
+        "intent": "action_34727_intent_42728",
+        "examples": [
+          {
+            "text": "Adeus"
+          },
+          {
+            "text": "Até mais"
+          },
+          {
+            "text": "ENCERRAR"
+          },
+          {
+            "text": "Encerrar agora"
+          },
+          {
+            "text": "Encerrar conversa"
+          },
+          {
+            "text": "Encerrar sessão"
+          },
+          {
+            "text": "fechar"
+          },
+          {
+            "text": "Fechar o chat"
+          },
+          {
+            "text": "Finalizar atendimento"
+          },
+          {
+            "text": "Finalizar este chat"
+          },
+          {
+            "text": "Parar conversa"
+          },
+          {
+            "text": "Quero sair"
+          },
+          {
+            "text": "Sair"
+          },
+          {
+            "text": "Sair do sistema"
+          },
+          {
+            "text": "Tchau"
+          },
+          {
+            "text": "Tchau, obrigado"
+          },
+          {
+            "text": "Vou embora"
+          }
+        ]
+      },
+      {
+        "intent": "action_46723_intent_6737",
+        "examples": [
+          {
+            "text": "menu"
+          },
+          {
+            "text": "Menu Principal"
+          },
+          {
+            "text": "menur"
+          },
+          {
+            "text": "opções"
+          },
+          {
+            "text": "oque faz?"
+          },
+          {
+            "text": "oque pode fazer"
+          },
+          {
+            "text": "retornar menu"
+          },
+          {
+            "text": "voltar"
+          }
+        ]
+      },
+      {
+        "intent": "fallback_connect_to_agent",
+        "examples": [
+          {
+            "text": "Eu quero contatar um agente/Eu quero entrar em contato com um agente"
+          },
+          {
+            "text": "Eu vou falar com um agente/ Eu vou falar com um agente de suporte."
+          },
+          {
+            "text": "Por favor, você pode entrar em contato comigo com um agente humano?"
+          },
+          {
+            "text": "Preciso contatar a um atendente"
+          },
+          {
+            "text": "Você pode me conectar com uma pessoa real?"
+          }
+        ],
+        "description": "Solicite um agente humano."
+      }
+    ],
+    "entities": [
+      {
+        "entity": "danger_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "profane_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "sys-date",
+        "values": []
+      },
+      {
+        "entity": "sys-number",
+        "values": []
+      },
+      {
+        "entity": "sys-yes-no",
+        "values": []
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "variables": [
+      {
+        "title": "cpf-valido",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "CPF",
+        "data_type": "number",
+        "description": ""
+      },
+      {
+        "title": "NOME DO CONDOMINO",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "NOME_DO_CONDOMINO",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "nome_usuario",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "nome_usuario",
+        "data_type": "string",
+        "description": ""
+      }
+    ],
+    "data_types": [],
+    "collections": [],
+    "counterexamples": [],
+    "system_settings": {
+      "nlp": {
+        "model": "latest"
+      },
+      "variable": {
+        "format": {
+          "time": {
+            "pattern": "short"
+          },
+          "currency": {
+            "fraction_digits": 2
+          }
+        }
+      },
+      "auto_learn": {
+        "apply": true
+      },
+      "topic_switch": {
+        "enabled": true,
+        "messages": {
+          "enable_confirmation": true,
+          "confirmation_failure": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "Desculpe, não entendi, confirme, por favor."
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              }
+            ]
+          },
+          "confirmation_request": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "Deseja continuar com o tópico anterior: "
+                        },
+                        {
+                          "system_variable": "digressed_from"
+                        },
+                        {
+                          "scalar": "?"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              },
+              {
+                "options": [
+                  {
+                    "label": "Sim",
+                    "value": {
+                      "input": {
+                        "text": "Sim"
+                      }
+                    }
+                  },
+                  {
+                    "label": "Não",
+                    "value": {
+                      "input": {
+                        "text": "Não"
+                      }
+                    }
+                  }
+                ],
+                "response_type": "option",
+                "repeat_on_reprompt": true
+              }
+            ]
+          }
+        },
+        "max_tries": 3
+      },
+      "generative_ai": {
+        "model_id": "ibm/granite-3-8b-instruct"
+      },
+      "disambiguation": {
+        "prompt": "Você quis dizer:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "Nenhum dos itens acima",
+        "use_connect_to_support_prompt": "conectar ao suporte",
+        "single_answer_clarification_prompt": "Outra coisa"
+      },
+      "search_routing": {
+        "target": "conversational_search"
+      }
+    },
+    "learning_opt_out": false
+  },
+  "description": "created for assistant 358fd175-5455-44fe-a531-ded00ccc6f18",
+  "assistant_id": "fb080842-b6b4-4c3a-a3ac-4d1df93c88fc",
+  "workspace_id": "4db385eb-0792-4533-ad77-bbc7d4d2fa6f",
+  "dialog_settings": {},
+  "next_snapshot_version": "3",
+  "environment_id": "47c6ed4d-1a08-4903-b546-de6e0dde37ef"
+}
