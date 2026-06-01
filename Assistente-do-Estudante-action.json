@@ -1,0 +1,3886 @@
+{
+  "name": "Assistente do Estudante-action",
+  "type": "action",
+  "valid": true,
+  "status": "Available",
+  "created": "2026-04-28T21:23:46.048Z",
+  "updated": "2026-05-13T20:09:19.528Z",
+  "language": "pt-br",
+  "skill_id": "9dc8289c-3938-48bb-8fea-b198ee3762e7",
+  "workspace": {
+    "actions": [
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_686",
+            "type": "standard",
+            "title": "VOLTAR",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Deseja voltar ao menu?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                }
+              ]
+            },
+            "context": {
+              "variables": []
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_686",
+            "next_step": "step_454"
+          },
+          {
+            "step": "step_454",
+            "type": "standard",
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_454_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_454",
+            "condition": {
+              "or": [
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "sim",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "sim voltar",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "s",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "next_step": "step_570"
+          },
+          {
+            "step": "step_570",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Tudo bem! Até uma próxima. 👋"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_570",
+            "condition": {
+              "or": [
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "não",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "não voltar",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "não quero",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matches": [
+                    {
+                      "variable": "step_686"
+                    },
+                    {
+                      "scalar": "nao",
+                      "options": {
+                        "ignore_case": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "title": "AÇÃO VOLTAR OU SAIR",
+        "action": "action_20479",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_20479_intent_25142"
+        },
+        "variables": [
+          {
+            "title": "No response",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_454",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_454_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "Tudo bem! Até uma próxima. 👋",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_570",
+            "data_type": "any"
+          },
+          {
+            "title": "VOLTAR",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_686",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_29943",
+        "display_name": "SIM",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_260",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "👋 Olá! Eu sou a Lulpa, sua Assistente Virtual.\nEstou aqui para facilitar sua rotina acadêmica. Posso te ajudar com:\n| 📝 Notas | 🚫 Faltas | 📅 Dias Letivos | 📚 Matérias |✍️ Provas |"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_260",
+            "next_step": "step_795"
+          },
+          {
+            "step": "step_795",
+            "type": "standard",
+            "title": "input de opção1",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Me informe o seu RM."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "Eu não entendi. Insira um número."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-number",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_795",
+            "next_step": "step_784"
+          },
+          {
+            "step": "step_784",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá, Luis Fernandes! 👋 RM: 1"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "numero_do_rm"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_784_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_784",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "1"
+                }
+              ]
+            },
+            "next_step": "step_858"
+          },
+          {
+            "step": "step_858",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá, Enzo Estanguera! 👋 RM: 2"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "numero_do_rm"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_858_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_858",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "2"
+                }
+              ]
+            },
+            "next_step": "step_585"
+          },
+          {
+            "step": "step_585",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá, Ana Clara! 👋 RM: 3"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "numero_do_rm"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_585_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_585",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "3"
+                }
+              ]
+            },
+            "next_step": "step_584"
+          },
+          {
+            "step": "step_584",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá, Larissa Koprowski 👋 RM: 4"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "numero_do_rm"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_584_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_584",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "4"
+                }
+              ]
+            },
+            "next_step": "step_696"
+          },
+          {
+            "step": "step_696",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá, Pedro Limeis! 👋 RM: 5"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_795"
+                  },
+                  "skill_variable": "numero_do_rm"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_46723",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_696_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_696",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "scalar": "5"
+                }
+              ]
+            },
+            "next_step": "step_400"
+          },
+          {
+            "step": "step_400",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Ops! Não reconheci esse formato de RM. Pode digitar novamente apenas os números? 🧐"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "replay",
+              "clear": [
+                {
+                  "variable": "step_795"
+                },
+                {
+                  "variable": "step_784"
+                },
+                {
+                  "variable": "step_858"
+                },
+                {
+                  "variable": "step_585"
+                },
+                {
+                  "variable": "step_584"
+                },
+                {
+                  "variable": "step_696"
+                }
+              ]
+            },
+            "variable": "step_400"
+          }
+        ],
+        "title": "saudações",
+        "action": "action_26380",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_26380_intent_32866"
+        },
+        "variables": [
+          {
+            "title": "👋 Olá! Eu sou a Lulpa, sua Assistente Virtual. Estou aqui para ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_260",
+            "data_type": "any"
+          },
+          {
+            "title": "Ops! Não reconheci esse formato de RM. Pode digitar novamente ap",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_400",
+            "data_type": "any"
+          },
+          {
+            "title": "Olá, **Larissa Koprowski** 👋 **RM**: 4",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_584",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_584_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "Olá, **Ana Clara**! 👋 **RM**: 3",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_585",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_585_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "Olá, Pedro Limeis! 👋 RM: 5",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_696",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_696_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "Olá, Luis Fernandes! 👋 RM: 1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_784",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_784_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "input de opção1",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_795",
+            "data_type": "number"
+          },
+          {
+            "title": "Olá, Enzo Estanguera! 👋 RM: 2",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_858",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_858_result_1",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_20479",
+        "display_name": "saudações",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_240",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Legal! Vamos ver as suas faltas. 🤗"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_240",
+            "next_step": "step_217"
+          },
+          {
+            "step": "step_217",
+            "type": "standard",
+            "title": "falta.luis",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "⏳ Período Letivo:\n\n└ Início: 23/02/2026\n\n└ Término: 30/06/2026\n\n🚨 FREQUÊNCIA: Você possui 10 faltas registradas até o momento."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_217_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_217",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "1"
+                }
+              ]
+            },
+            "next_step": "step_320"
+          },
+          {
+            "step": "step_320",
+            "type": "standard",
+            "title": "falta.enzo",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "⏳ Período Letivo:\n\n└ Início: 23/02/2026\n\n└ Término: 30/06/2026\n\n🚨 FREQUÊNCIA: Você possui 10 faltas registradas até o momento."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_320_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_320",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "2"
+                }
+              ]
+            },
+            "next_step": "step_808"
+          },
+          {
+            "step": "step_808",
+            "type": "standard",
+            "title": "falta.ana",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "⏳ Período Letivo:\n\n└ Início: 23/02/2026\n\n└ Término: 30/06/2026\n\n🚨 FREQUÊNCIA: Você possui 10 faltas registradas até o momento."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_808_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_808",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "3"
+                }
+              ]
+            },
+            "next_step": "step_877"
+          },
+          {
+            "step": "step_877",
+            "type": "standard",
+            "title": "falta.larissa",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "⏳ Período Letivo:\n\n└ Início: 23/02/2026\n\n└ Término: 30/06/2026\n\n🚨 FREQUÊNCIA: Você possui 10 faltas registradas até o momento."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_877_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_877",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "4"
+                }
+              ]
+            },
+            "next_step": "step_967"
+          },
+          {
+            "step": "step_967",
+            "type": "standard",
+            "title": "falta.pedro",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "⏳ Período Letivo:\n\n└ Início: 23/02/2026\n\n└ Término: 30/06/2026\n\n🚨 FREQUÊNCIA: Você possui 10 faltas registradas até o momento."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_967_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_967",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "5"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "FALTAS",
+        "action": "action_29943",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_29943_intent_40455"
+        },
+        "variables": [
+          {
+            "title": "falta.luis",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_217",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_217_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "Legal! Vamos ver as suas faltas. 🤗",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_240",
+            "data_type": "any"
+          },
+          {
+            "title": "falta.enzo",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_320",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_320_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "falta.ana",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_808",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_808_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "falta.larissa",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_877",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_877_result_1",
+            "data_type": "any"
+          },
+          {
+            "title": "falta.pedro",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_967",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_967_result_1",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_46723",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_240",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Legal! Vamos ver as suas notas. 🤗"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_240",
+            "next_step": "step_217"
+          },
+          {
+            "step": "step_217",
+            "type": "standard",
+            "title": "notas.luis",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🐍 PYTHON\n\n├ Checkpoint 1: 5.0 ⚠️\n├ Checkpoint 2: 10.0 ✅\n└ Checkpoint 3: *Aguardando...* ⏳\n\n☕ JAVA\n\n├ Checkpoint 1: 10.0 ✅\n├ Checkpoint 2: 10.0 ✅\n└ Checkpoint 3: *Aguardando...* ⏳\n\n🤖 CHATBOT\n\n├ Checkpoint 1: 10.0 ✅\n├ Checkpoint 2: *Aguardando...* ⏳\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_217_result_2",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_217",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "1"
+                }
+              ]
+            },
+            "next_step": "step_320"
+          },
+          {
+            "step": "step_320",
+            "type": "standard",
+            "title": "notas.enzo",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🐍 PYTHON\n\n├ Checkpoint 1: 9.0 ✅\n├ Checkpoint 2: 1.0 ⚠️\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "☕ JAVA\n\n├ Checkpoint 1: 8.0 ✅\n├ Checkpoint 2: 7.0 ✅\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🤖 CHATBOT\n\n├ Checkpoint 1: 8.0 ✅\n├ Checkpoint 2: *Aguardando...* ⏳\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_320_result_2",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_320",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "2"
+                }
+              ]
+            },
+            "next_step": "step_808"
+          },
+          {
+            "step": "step_808",
+            "type": "standard",
+            "title": "notas.ana",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🐍 PYTHON\n\n├ Checkpoint 1: 6.0 ✅\n├ Checkpoint 2: 9.0 ✅\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "☕ JAVA\n\n├ Checkpoint 1: 2.0 ⚠️\n├ Checkpoint 2: 4.0 ⚠️\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🤖 CHATBOT\n\n├ Checkpoint 1: 9.0 ✅\n├ Checkpoint 2: *Aguardando...* ⏳\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_808_result_2",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_808",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "3"
+                }
+              ]
+            },
+            "next_step": "step_877"
+          },
+          {
+            "step": "step_877",
+            "type": "standard",
+            "title": "notas.larissa",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🐍 PYTHON\n\n├ Checkpoint 1: 7.0 ✅\n├ Checkpoint 2: 9.0 ✅\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "☕ JAVA\n\n├ Checkpoint 1: 4.0 ⚠️\n├ Checkpoint 2: 5.0 ⚠️\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🤖 CHATBOT\n\n├ Checkpoint 1: 8.0 ✅\n├ Checkpoint 2: *Aguardando...* ⏳\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_877_result_2",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_877",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "4"
+                }
+              ]
+            },
+            "next_step": "step_967"
+          },
+          {
+            "step": "step_967",
+            "type": "standard",
+            "title": "notas.pedro",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🐍 PYTHON\n\n├ Checkpoint 1: 10.0 ✅\n├ Checkpoint 2: 6.0 ✅\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "☕ JAVA\n\n├ Checkpoint 1: 9.0 ✅\n├ Checkpoint 2: 8.0 ✅\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "🤖 CHATBOT\n\n├ Checkpoint 1: 5.0 ⚠️\n├ Checkpoint 2: *Aguardando...* ⏳\n└ Checkpoint 3: *Aguardando...* ⏳"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_967_result_2",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_967",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "5"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "NOTAS",
+        "action": "action_29943-2",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_29943_intent_40455-2"
+        },
+        "variables": [
+          {
+            "title": "notas.luis",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_217",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_217_result_2",
+            "data_type": "any"
+          },
+          {
+            "title": "Legal! Vamos ver as suas notas. 🤗",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_240",
+            "data_type": "any"
+          },
+          {
+            "title": "notas.enzo",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_320",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_320_result_2",
+            "data_type": "any"
+          },
+          {
+            "title": "notas.ana",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_808",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_808_result_2",
+            "data_type": "any"
+          },
+          {
+            "title": "notas.larissa",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_877",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_877_result_2",
+            "data_type": "any"
+          },
+          {
+            "title": "notas.pedro",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_967",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_967_result_2",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_29943-3",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_240",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Legal! Vamos ver as suas matérias. 🤗"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_240",
+            "next_step": "step_217"
+          },
+          {
+            "step": "step_217",
+            "type": "standard",
+            "title": "materias.luis",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📚 GRADE CURRICULAR\n\n---\n🐍 PYTHON\n\n• Quinta-feira: 07:50 às 12:10\n• Sexta-feira: 07:50 às 12:10\n\n☕ JAVA\n\n• Terça-feira: 10:10 às 12:10\n• Quarta-feira: 07:50 às 12:10\n\n🤖 CHATBOT\n\n• Segunda-feira: 07:50 às 12:10\n• Terça-feira: 07:50 às 10:10"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_217_result_3",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_217",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "1"
+                }
+              ]
+            },
+            "next_step": "step_320"
+          },
+          {
+            "step": "step_320",
+            "type": "standard",
+            "title": "materias.enzo",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📚 GRADE CURRICULAR\n\n---\n🐍 PYTHON\n\n• Quinta-feira: 07:50 às 12:10\n• Sexta-feira: 07:50 às 12:10\n\n☕ JAVA\n\n• Terça-feira: 10:10 às 12:10\n• Quarta-feira: 07:50 às 12:10\n\n🤖 CHATBOT\n\n• Segunda-feira: 07:50 às 12:10\n• Terça-feira: 07:50 às 10:10"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_320_result_3",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_320",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "2"
+                }
+              ]
+            },
+            "next_step": "step_808"
+          },
+          {
+            "step": "step_808",
+            "type": "standard",
+            "title": "materias.ana",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📚 GRADE CURRICULAR\n\n---\n🐍 PYTHON\n\n• Quinta-feira: 07:50 às 12:10\n• Sexta-feira: 07:50 às 12:10\n\n☕ JAVA\n\n• Terça-feira: 10:10 às 12:10\n• Quarta-feira: 07:50 às 12:10\n\n🤖 CHATBOT\n\n• Segunda-feira: 07:50 às 12:10\n• Terça-feira: 07:50 às 10:10"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_808_result_3",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_808",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "3"
+                }
+              ]
+            },
+            "next_step": "step_877"
+          },
+          {
+            "step": "step_877",
+            "type": "standard",
+            "title": "materias.Larissa",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📚 GRADE CURRICULAR\n\n---\n🐍 PYTHON\n\n• Quinta-feira: 07:50 às 12:10\n• Sexta-feira: 07:50 às 12:10\n\n☕ JAVA\n\n• Terça-feira: 10:10 às 12:10\n• Quarta-feira: 07:50 às 12:10\n\n🤖 CHATBOT\n\n• Segunda-feira: 07:50 às 12:10\n• Terça-feira: 07:50 às 10:10"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_877_result_3",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_877",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "4"
+                }
+              ]
+            },
+            "next_step": "step_967"
+          },
+          {
+            "step": "step_967",
+            "type": "standard",
+            "title": "materias.pedro",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📚 GRADE CURRICULAR\n\n---\n🐍 PYTHON\n\n• Quinta-feira: 07:50 às 12:10\n• Sexta-feira: 07:50 às 12:10\n\n☕ JAVA\n\n• Terça-feira: 10:10 às 12:10\n• Quarta-feira: 07:50 às 12:10\n\n🤖 CHATBOT\n\n• Segunda-feira: 07:50 às 12:10\n• Terça-feira: 07:50 às 10:10"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_967_result_3",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_967",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "5"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "MATERIAS",
+        "action": "action_29943-3",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_29943_intent_40455-3"
+        },
+        "variables": [
+          {
+            "title": "materias.luis",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_217",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_217_result_3",
+            "data_type": "any"
+          },
+          {
+            "title": "Legal! Vamos ver as suas matérias. 🤗",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_240",
+            "data_type": "any"
+          },
+          {
+            "title": "materias.enzo",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_320",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_320_result_3",
+            "data_type": "any"
+          },
+          {
+            "title": "materias.ana",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_808",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_808_result_3",
+            "data_type": "any"
+          },
+          {
+            "title": "materias.Larissa",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_877",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_877_result_3",
+            "data_type": "any"
+          },
+          {
+            "title": "materias.pedro",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_967",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_967_result_3",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_29943-4",
+        "display_name": "materias",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_240",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Legal! Vamos ver a sua próxima prova. 🤗"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_240",
+            "next_step": "step_217"
+          },
+          {
+            "step": "step_217",
+            "type": "standard",
+            "title": "prova.luis",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "PRÓXIMA AVALIAÇÃO\n\n🐍 Matéria: Python\n📝 Avaliação: Checkpoint 3 (CP3)\n📅 Data: Sexta-feira\n⏰ Horário: 10:10 às 12:50"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_217_result_4",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_217",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "1"
+                }
+              ]
+            },
+            "next_step": "step_320"
+          },
+          {
+            "step": "step_320",
+            "type": "standard",
+            "title": "prova.enzo",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "PRÓXIMA AVALIAÇÃO\n\n🐍 Matéria: Python\n📝 Avaliação: Checkpoint 3 (CP3)\n📅 Data: Sexta-feira\n⏰ Horário: 10:10 às 12:50"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_320_result_4",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_320",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "2"
+                }
+              ]
+            },
+            "next_step": "step_808"
+          },
+          {
+            "step": "step_808",
+            "type": "standard",
+            "title": "prova.ana",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "PRÓXIMA AVALIAÇÃO\n\n🐍 Matéria: Python\n📝 Avaliação: Checkpoint 3 (CP3)\n📅 Data: Sexta-feira\n⏰ Horário: 10:10 às 12:50"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_808_result_4",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_808",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "3"
+                }
+              ]
+            },
+            "next_step": "step_877"
+          },
+          {
+            "step": "step_877",
+            "type": "standard",
+            "title": "prova.larissa",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "PRÓXIMA AVALIAÇÃO\n\n🐍 Matéria: Python\n📝 Avaliação: Checkpoint 3 (CP3)\n📅 Data: Sexta-feira\n⏰ Horário: 10:10 às 12:50"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_877_result_4",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_877",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "4"
+                }
+              ]
+            },
+            "next_step": "step_967"
+          },
+          {
+            "step": "step_967",
+            "type": "standard",
+            "title": "prova.pedro",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "PRÓXIMA AVALIAÇÃO\n\n🐍 Matéria: Python\n📝 Avaliação: Checkpoint 3 (CP3)\n📅 Data: Sexta-feira\n⏰ Horário: 10:10 às 12:50"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_967_result_4",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_967",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "5"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "PROVAS",
+        "action": "action_29943-4",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_29943_intent_40455-4"
+        },
+        "variables": [
+          {
+            "title": "prova.luis",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_217",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_217_result_4",
+            "data_type": "any"
+          },
+          {
+            "title": "Legal! Vamos ver a sua próxima prova. 🤗",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_240",
+            "data_type": "any"
+          },
+          {
+            "title": "prova.enzo",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_320",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_320_result_4",
+            "data_type": "any"
+          },
+          {
+            "title": "prova.ana",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_808",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_808_result_4",
+            "data_type": "any"
+          },
+          {
+            "title": "prova.larissa",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_877",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_877_result_4",
+            "data_type": "any"
+          },
+          {
+            "title": "prova.pedro",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_967",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_967_result_4",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_29943-5",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_240",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Legal! Vamos ver seu cronograma de aulas. 🤗"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_240",
+            "next_step": "step_217"
+          },
+          {
+            "step": "step_217",
+            "type": "standard",
+            "title": "diasletivos.luis",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📅 DIAS LETIVOS\n\n---\n⏰ Horários:\n└  Início: 07:50\n└  Intervalo: 09:50 às 10:10\n└  Saída: 12:10\n\n🗓️ Cronograma Semanal:\n\n• Seg, Ter & Sex | 🏢 Presencial\n\n• Qua e Qui |💻  Online\n\n📊 Resumo: Você possui 3 dias presenciais e 2 dias online."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_217_result_5",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_217",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "1"
+                }
+              ]
+            },
+            "next_step": "step_320"
+          },
+          {
+            "step": "step_320",
+            "type": "standard",
+            "title": "diasletivos.enzo",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📅 DIAS LETIVOS\n\n---\n⏰ Horários:\n└  Início: 07:50\n└  Intervalo: 09:50 às 10:10\n└  Saída: 12:10\n\n🗓️ Cronograma Semanal:\n\n• Seg, Ter & Sex | 🏢 Presencial\n\n• Qua e Qui |💻  Online\n\n📊 Resumo: Você possui 3 dias presenciais e 2 dias online."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_320_result_5",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_320",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "2"
+                }
+              ]
+            },
+            "next_step": "step_808"
+          },
+          {
+            "step": "step_808",
+            "type": "standard",
+            "title": "diasletivos.ana",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📅 DIAS LETIVOS\n\n---\n⏰ Horários:\n└  Início: 07:50\n└  Intervalo: 09:50 às 10:10\n└  Saída: 12:10\n\n🗓️ Cronograma Semanal:\n\n• Seg, Ter & Sex | 🏢 Presencial\n\n• Qua e Qui |💻  Online\n\n📊 Resumo: Você possui 3 dias presenciais e 2 dias online."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_808_result_5",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_808",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "3"
+                }
+              ]
+            },
+            "next_step": "step_877"
+          },
+          {
+            "step": "step_877",
+            "type": "standard",
+            "title": "diasletivos.larissa",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📅 DIAS LETIVOS\n\n---\n⏰ Horários:\n└  Início: 07:50\n└  Intervalo: 09:50 às 10:10\n└  Saída: 12:10\n\n🗓️ Cronograma Semanal:\n\n• Seg, Ter & Sex | 🏢 Presencial\n\n• Qua e Qui |💻  Online\n\n📊 Resumo: Você possui 3 dias presenciais e 2 dias online."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_877_result_5",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_877",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "4"
+                }
+              ]
+            },
+            "next_step": "step_967"
+          },
+          {
+            "step": "step_967",
+            "type": "standard",
+            "title": "diasletivos.pedro",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "📅 DIAS LETIVOS\n\n---\n⏰ Horários:\n└  Início: 07:50\n└  Intervalo: 09:50 às 10:10\n└  Saída: 12:10\n\n🗓️ Cronograma Semanal:\n\n• Seg, Ter & Sex | 🏢 Presencial\n\n• Qua e Qui |💻  Online\n\n📊 Resumo: Você possui 3 dias presenciais e 2 dias online."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_20479",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_967_result_5",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_967",
+            "condition": {
+              "eq": [
+                {
+                  "skill_variable": "numero_do_rm"
+                },
+                {
+                  "scalar": "5"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "DIASLETIVOS",
+        "action": "action_29943-5",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_29943_intent_40455-5"
+        },
+        "variables": [
+          {
+            "title": "diasletivos.luis",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_217",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_217_result_5",
+            "data_type": "any"
+          },
+          {
+            "title": "Legal! Vamos ver seu cronograma de aulas. 🤗",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_240",
+            "data_type": "any"
+          },
+          {
+            "title": "diasletivos.enzo",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_320",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_320_result_5",
+            "data_type": "any"
+          },
+          {
+            "title": "diasletivos.ana",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_808",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_808_result_5",
+            "data_type": "any"
+          },
+          {
+            "title": "diasletivos.larissa",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_877",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_877_result_5",
+            "data_type": "any"
+          },
+          {
+            "title": "diasletivos.pedro",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_967",
+            "data_type": "any"
+          },
+          {
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_967_result_5",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "fallback",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_752",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Olá! Como posso te ajudar agora?\n\n---\n📅 DIAS LETIVOS — Consulte o calendário\n\n📊 NOTAS — Veja seu desempenho\n\n🚫 FALTAS — Controle sua frequência\n\n📝 PROVAS — Datas e avaliações\n\n📖 MATÉRIAS — Conteúdo do semestre"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "Eu não entendi. Insira um número."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-number",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_752",
+            "condition": {
+              "or": [
+                {
+                  "or": [
+                    {
+                      "eq": [
+                        {
+                          "skill_variable": "numero_do_rm"
+                        },
+                        {
+                          "scalar": "1"
+                        }
+                      ]
+                    },
+                    {
+                      "eq": [
+                        {
+                          "skill_variable": "voltar_sim"
+                        },
+                        {
+                          "scalar": "yes"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "or": [
+                    {
+                      "eq": [
+                        {
+                          "skill_variable": "numero_do_rm"
+                        },
+                        {
+                          "scalar": "2"
+                        }
+                      ]
+                    },
+                    {
+                      "eq": [
+                        {
+                          "skill_variable": "voltar_sim"
+                        },
+                        {
+                          "scalar": "yes"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "or": [
+                    {
+                      "eq": [
+                        {
+                          "skill_variable": "numero_do_rm"
+                        },
+                        {
+                          "scalar": "3"
+                        }
+                      ]
+                    },
+                    {
+                      "eq": [
+                        {
+                          "skill_variable": "voltar_sim"
+                        },
+                        {
+                          "scalar": "yes"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "or": [
+                    {
+                      "eq": [
+                        {
+                          "skill_variable": "numero_do_rm"
+                        },
+                        {
+                          "scalar": "4"
+                        }
+                      ]
+                    },
+                    {
+                      "eq": [
+                        {
+                          "skill_variable": "voltar_sim"
+                        },
+                        {
+                          "scalar": "yes"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "or": [
+                    {
+                      "eq": [
+                        {
+                          "skill_variable": "numero_do_rm"
+                        },
+                        {
+                          "scalar": "5"
+                        }
+                      ]
+                    },
+                    {
+                      "eq": [
+                        {
+                          "skill_variable": "voltar_sim"
+                        },
+                        {
+                          "scalar": "yes"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Menu Principal",
+        "action": "action_46723",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_46723_intent_6737"
+        },
+        "variables": [
+          {
+            "title": "Olá! Como posso te ajudar agora? --- 📅 DIAS LETIVOS — Consulte ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_752",
+            "data_type": "number"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_29943-2",
+        "display_name": "",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_001",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Acho que não entendi. Reformule sua pergunta."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001",
+            "condition": {
+              "lte": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": ""
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "fallback",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_002_result_1",
+                "ignore_end_action_steps": false
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "gt": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            }
+          }
+        ],
+        "title": "No matches",
+        "action": "anything_else",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "Receio não entender o que você está perguntando, por favor, refo",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002_result_1",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_001",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Acho que não entendi. Eu posso conectar você a um agente."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_001",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Step validation failed"
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Desculpe não poder ajudá-lo. Vou conectá-lo a um agente imediatamente."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_002",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Agent requested"
+                }
+              ]
+            },
+            "next_step": "step_003"
+          },
+          {
+            "step": "step_003",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Acho que não entendi o que você está pedindo; vou conectá-lo a um agente."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_003",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "No action matches"
+                }
+              ]
+            },
+            "next_step": "step_004"
+          },
+          {
+            "step": "step_004",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Parece que esta conversa seria melhor gerenciada por um agente humano. Deixe-me conectá-lo a um de nossos agentes."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_004",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Danger word detected"
+                }
+              ]
+            },
+            "next_step": "step_005"
+          },
+          {
+            "step": "step_005",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Parece que esta conversa seria melhor gerenciada por um agente humano. Deixe-me conectá-lo a um de nossos agentes."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_005",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Profanity detected"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Fallback",
+        "action": "fallback",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "fallback_connect_to_agent"
+        },
+        "variables": [
+          {
+            "title": "Acho que não entendi. Eu posso conectar você a um agente.",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "title": "Desculpe não poder ajudá-lo. Vou conectá-lo a um agente imediata",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "title": "Acho que não entendi o que você está pedindo; vou conectá-lo a u",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_003",
+            "data_type": "any"
+          },
+          {
+            "title": "Parece que esta conversa seria melhor gerenciada por um agente h",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_004",
+            "data_type": "any"
+          },
+          {
+            "title": "Parece que esta conversa seria melhor gerenciada por um agente h",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_005",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "run_always",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "danger_word_detected",
+            "type": "standard",
+            "title": "Connect to agent",
+            "handlers": [],
+            "resolver": {
+              "type": "fallback"
+            },
+            "variable": "danger_word_detected_variable",
+            "condition": {
+              "entity": "danger_words"
+            },
+            "next_step": "profanity_detected"
+          },
+          {
+            "step": "profanity_detected",
+            "type": "standard",
+            "title": "Show warning",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Use o idioma apropriado ao interagir com o assistente."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "max_hits",
+                "handler": "max_hits_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "max_hits": 2,
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "profanity_detected_variable",
+            "condition": {
+              "entity": "profane_words"
+            }
+          }
+        ],
+        "title": "Trigger word detected",
+        "action": "run_always",
+        "boosts": [],
+        "handlers": [],
+        "variables": [
+          {
+            "title": "Profanity detected",
+            "variable": "danger_word_detected_variable",
+            "data_type": "any"
+          },
+          {
+            "title": "Profane word detected",
+            "variable": "profanity_detected_variable",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else"
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_759",
+            "type": "standard",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "👋 Olá! Eu sou a Lulpa, sua Assistente Virtual.\\n\\nEstou aqui para facilitar sua rotina acadêmica\n\ndigite OI para podemos continuar"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_759"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "title": "👋 Olá! Eu sou a Lulpa, sua Assistente Virtual.\\n\\nEstou aqui pa",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_759",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_26380",
+        "disambiguation_opt_out": true
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_20479_intent_25142",
+        "examples": [
+          {
+            "text": "ONDE VEJO"
+          },
+          {
+            "text": "PRECISO VER"
+          },
+          {
+            "text": "PRECISO VER FALTAS"
+          },
+          {
+            "text": "PRECISO VER NOTAS"
+          },
+          {
+            "text": "QUERO"
+          },
+          {
+            "text": "S"
+          },
+          {
+            "text": "SIM"
+          }
+        ]
+      },
+      {
+        "intent": "action_26380_intent_32866",
+        "examples": [
+          {
+            "text": "ajude"
+          },
+          {
+            "text": "alguem ai"
+          },
+          {
+            "text": "beleza"
+          },
+          {
+            "text": "boa noite"
+          },
+          {
+            "text": "boa tarde"
+          },
+          {
+            "text": "Bom dia"
+          },
+          {
+            "text": "e ai"
+          },
+          {
+            "text": "e aí"
+          },
+          {
+            "text": "ei"
+          },
+          {
+            "text": "hello"
+          },
+          {
+            "text": "help"
+          },
+          {
+            "text": "help me"
+          },
+          {
+            "text": "hi"
+          },
+          {
+            "text": "hii"
+          },
+          {
+            "text": "hiii"
+          },
+          {
+            "text": "hy"
+          },
+          {
+            "text": "hyyy"
+          },
+          {
+            "text": "me ajuda"
+          },
+          {
+            "text": "oi"
+          },
+          {
+            "text": "oii"
+          },
+          {
+            "text": "oiii"
+          },
+          {
+            "text": "oiiii"
+          },
+          {
+            "text": "oiiiiiiiiiiiiiiii"
+          },
+          {
+            "text": "oioi"
+          },
+          {
+            "text": "oioio"
+          },
+          {
+            "text": "ola"
+          },
+          {
+            "text": "Olá"
+          },
+          {
+            "text": "oooooooooooooiiiiiiiiiiiiii"
+          },
+          {
+            "text": "opa"
+          },
+          {
+            "text": "pode me auxiliar"
+          },
+          {
+            "text": "saudações"
+          },
+          {
+            "text": "save"
+          },
+          {
+            "text": "/start"
+          },
+          {
+            "text": "welcome_message"
+          }
+        ]
+      },
+      {
+        "intent": "action_29943_intent_40455",
+        "examples": [
+          {
+            "text": "3"
+          },
+          {
+            "text": "dalta"
+          },
+          {
+            "text": "falta"
+          },
+          {
+            "text": "FALTAS"
+          },
+          {
+            "text": "frequencia"
+          }
+        ]
+      },
+      {
+        "intent": "action_29943_intent_40455-2",
+        "examples": [
+          {
+            "text": "nota"
+          },
+          {
+            "text": "notas"
+          }
+        ]
+      },
+      {
+        "intent": "action_29943_intent_40455-3",
+        "examples": [
+          {
+            "text": "materias"
+          },
+          {
+            "text": "matérias"
+          }
+        ]
+      },
+      {
+        "intent": "action_29943_intent_40455-4",
+        "examples": [
+          {
+            "text": "prova"
+          },
+          {
+            "text": "provas"
+          }
+        ]
+      },
+      {
+        "intent": "action_29943_intent_40455-5",
+        "examples": [
+          {
+            "text": "1"
+          },
+          {
+            "text": "dias com aula"
+          },
+          {
+            "text": "dias letivos"
+          },
+          {
+            "text": "numero 1"
+          },
+          {
+            "text": "numero um"
+          },
+          {
+            "text": "um"
+          }
+        ]
+      },
+      {
+        "intent": "action_46723_intent_6737",
+        "examples": [
+          {
+            "text": "menu"
+          },
+          {
+            "text": "Menu Principal"
+          },
+          {
+            "text": "opções"
+          },
+          {
+            "text": "oque faz?"
+          },
+          {
+            "text": "oque pode fazer"
+          },
+          {
+            "text": "voltar"
+          }
+        ]
+      },
+      {
+        "intent": "fallback_connect_to_agent",
+        "examples": [
+          {
+            "text": "Eu quero contatar um agente/Eu quero entrar em contato com um agente"
+          },
+          {
+            "text": "Eu vou falar com um agente/ Eu vou falar com um agente de suporte."
+          },
+          {
+            "text": "Por favor, você pode entrar em contato comigo com um agente humano?"
+          },
+          {
+            "text": "Preciso contatar a um atendente"
+          },
+          {
+            "text": "Você pode me conectar com uma pessoa real?"
+          }
+        ],
+        "description": "Solicite um agente humano."
+      }
+    ],
+    "entities": [
+      {
+        "entity": "danger_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "profane_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "sys-date",
+        "values": []
+      },
+      {
+        "entity": "sys-number",
+        "values": []
+      },
+      {
+        "entity": "sys-yes-no",
+        "values": []
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "variables": [
+      {
+        "title": "NÃO",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "NAO",
+        "data_type": "yes_no",
+        "description": ""
+      },
+      {
+        "title": "numero_do_rm",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "numero_do_rm",
+        "data_type": "number",
+        "description": ""
+      },
+      {
+        "title": "SIM",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "SIM",
+        "data_type": "yes_no",
+        "description": ""
+      },
+      {
+        "title": "voltar_sim",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "voltar_sim",
+        "data_type": "yes_no",
+        "description": ""
+      }
+    ],
+    "data_types": [],
+    "collections": [],
+    "counterexamples": [],
+    "system_settings": {
+      "nlp": {
+        "model": "latest"
+      },
+      "variable": {
+        "format": {
+          "time": {
+            "pattern": "short"
+          },
+          "currency": {
+            "fraction_digits": 2
+          }
+        }
+      },
+      "auto_learn": {
+        "apply": true
+      },
+      "topic_switch": {
+        "enabled": true,
+        "messages": {
+          "enable_confirmation": true,
+          "confirmation_failure": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "Desculpe, não entendi, confirme, por favor."
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              }
+            ]
+          },
+          "confirmation_request": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "Deseja continuar com o tópico anterior: "
+                        },
+                        {
+                          "system_variable": "digressed_from"
+                        },
+                        {
+                          "scalar": "?"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              },
+              {
+                "options": [
+                  {
+                    "label": "Sim",
+                    "value": {
+                      "input": {
+                        "text": "Sim"
+                      }
+                    }
+                  },
+                  {
+                    "label": "Não",
+                    "value": {
+                      "input": {
+                        "text": "Não"
+                      }
+                    }
+                  }
+                ],
+                "response_type": "option",
+                "repeat_on_reprompt": true
+              }
+            ]
+          }
+        },
+        "max_tries": 3
+      },
+      "generative_ai": {
+        "model_id": "ibm/granite-3-8b-instruct"
+      },
+      "disambiguation": {
+        "prompt": "Você quis dizer:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "Nenhum dos itens acima",
+        "use_connect_to_support_prompt": "conectar ao suporte",
+        "single_answer_clarification_prompt": "Outra coisa"
+      },
+      "search_routing": {
+        "target": "conversational_search"
+      }
+    },
+    "learning_opt_out": false
+  },
+  "description": "created for assistant 358fd175-5455-44fe-a531-ded00ccc6f18",
+  "assistant_id": "358fd175-5455-44fe-a531-ded00ccc6f18",
+  "workspace_id": "9dc8289c-3938-48bb-8fea-b198ee3762e7",
+  "dialog_settings": {},
+  "next_snapshot_version": "5",
+  "environment_id": "5acfac7c-c84f-4fdd-a7a6-e54b5d8c5e58"
+}
